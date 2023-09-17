@@ -1,0 +1,48 @@
+@import 'src/variables.scss';
+
+.container{
+    .products-container{
+        min-height: 80vh;
+    }
+    background-color: $background-color;
+    min-height: 100vh;
+    max-width: 100vw;
+    .products-container{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        @media screen and (max-width: 1300px){
+            grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        };
+        @media screen and (max-width: 540px) {
+            @include flex(column,center,center);
+        };
+    }
+    .single-product-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0 2vw 2vw 2vw;
+
+    }
+}
+
+.pagination-btns{
+    @include flex(row,center,center);
+    .fa-solid{
+        color:$primary-color;
+        font-size: 2vw;
+        padding:2rem;
+        cursor: pointer;
+        &:hover{
+            font-size:1.8vw;
+            
+        }
+    }
+    .page-number{
+        font-size: 2vw;
+        color:$primary-color;
+        position: absolute;
+
+    }
+}
+

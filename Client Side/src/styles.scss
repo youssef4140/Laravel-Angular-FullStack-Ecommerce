@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+
+@import 'src/variables.scss';
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:'Open Sans', sans-serif;
+    color:$font-color;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.custom-snackbar {
+    background-color: red;
+    color:red;
+    border:red;
+}
+
+.mat-snack-bar-container{
+    background-color: beige;
+}
+
+a{
+    text-decoration: none;
+    color:$font-color;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $primary-color;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary-color-hover;
+  }
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

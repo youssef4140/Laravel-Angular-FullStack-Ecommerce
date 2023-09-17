@@ -1,0 +1,30 @@
+<div class="header">
+    <a class="Orders" routerLink="/adminProducts" >
+        <i class="fa-solid fa-arrow-left"></i> Go To Products 
+    </a>
+</div>
+
+
+<mat-accordion *ngFor="let order of orders;index as i">
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                User: {{order.user.name}}
+                <br> 
+                id: {{order.user.id}} 
+                | 
+                {{order.orders.length}} Orders
+            </mat-panel-title>
+            <mat-panel-description >
+                <span>
+                    Email: ${{order.user.email}}
+                    |
+                    Number: {{order.user.number}}
+                    <br>
+                    Address: {{order.user.address}}
+                </span>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-order [orders]="order.orders"></app-order>
+    </mat-expansion-panel>
+</mat-accordion>

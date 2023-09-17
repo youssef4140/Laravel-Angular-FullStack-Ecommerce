@@ -1,0 +1,25 @@
+
+$primary-color:#4AE599; 
+$secondary-color:#4c4ae5;
+$font-color:#f8f8f8;
+$background-color:#11111F;
+$background-color-hover:#1a1a30;
+$primary-color-hover:darken($primary-color,25%);
+$danger:#f64949;
+
+$border-color:#656363;
+
+@mixin flex($direction,$align,$justify){
+    display:flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+::ng-deep .mat-menu-content {
+    background-color: black; /* Change to your desired color */
+  }
+  
+  ::ng-deep .mat-menu-item {
+    color: black; /* Change to your desired color */
+  }

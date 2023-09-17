@@ -1,0 +1,139 @@
+@import 'src/variables.scss';
+
+.container {
+  .register-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .fr2 {
+      grid-column: span 2;
+    }
+    
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+      .fr2 {
+        grid-column: span 1;
+      }
+
+    }
+  }
+
+  padding:2rem;
+  background-color: $background-color;
+
+
+  .form-field {
+    margin: 0 1rem 0 1rem;
+
+    .custom-form-field {
+      width: 60vw;
+      max-width: 227px;
+      
+      .mat-mdc-text-field-wrapper.mdc-text-field{
+        width:100% ;
+      }
+
+    }
+  }
+
+
+  button.hide-password {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  mat-label {
+    color: $primary-color;
+  }
+
+  mat-error {
+    color: $primary-color;
+  }
+
+  mat-icon {
+    color: $primary-color;
+  }
+
+
+
+  div.mat-mdc-text-field-wrapper.mdc-text-field {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+
+    .mat-mdc-option.mdc-list-item.mat-mdc-option-active.ng-tns-c3393473648-6 {
+      background-color: $background-color;
+
+    }
+
+    input,
+    textarea {
+      color: $font-color;
+      transition: all 1s ease-in-out;
+    }
+  }
+
+  .btn {
+    background-color: $background-color;
+    outline: none;
+    border: 1px solid $border-color;
+    padding: 0.5rem 2rem;
+    font-size: 1em;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    @media screen and (max-width: 700px) {
+      margin-bottom: 10px;
+    }
+
+    &.submit {
+      color: $primary-color;
+
+      &:hover {
+        color: $background-color;
+        background-color: $primary-color;
+      }
+
+    }
+
+    &.cancel {
+      color: $border-color;
+
+      &:hover {
+        color: $background-color;
+        background-color: $border-color;
+      }
+    }
+  }
+
+
+
+  mat-hint {
+    color: $primary-color;
+  }
+
+
+}
+
+.mdc-list-item__primary-text {
+  color: $primary-color !important;
+}
+
+.mat-mdc-option.mat-mdc-option.mdc-list-item {
+  background-color: $background-color !important;
+
+  &:hover {
+    background-color: $background-color;
+    border: 1px solid $primary-color;
+  }
+}
+
+.mat-mdc-option:focus.mdc-list-item,
+.mat-mdc-option.mat-mdc-option-active.mdc-list-item {
+  background-color: $background-color;
+
+}
+
+div.mat-mdc-select-panel {
+  background-color: $background-color !important;
+}
+

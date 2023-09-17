@@ -1,0 +1,78 @@
+<div class="container">
+
+    <form [formGroup]="login? loginForm:registerForm" (ngSubmit)="onSubmit()" class="register-form">
+        <div class="form-field">
+            <mat-form-field class="custom-form-field">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="registerForm.get('email')?.invalid">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <mat-form-field class="custom-form-field">
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required>
+                <button class="hide-password" mat-icon-button matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>at least 8 characters</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <!-- LOGIN UP -->
+        <ng-container *ngIf="!login">
+            <div class="form-field">
+                <mat-form-field class="custom-form-field">
+                    <mat-label>Confirm password</mat-label>
+                    <input formControlName="password_confirmation" matInput [type]="hide ? 'password' : 'text'"
+                        required>
+                    <button class="hide-password" mat-icon-button matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error></mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field class="custom-form-field" appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field class="custom-form-field" appearance="fill">
+                    <mat-label>Number</mat-label>
+                    <input formControlName="phone" matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field class="custom-form-field" appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input formControlName="address" matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+        </ng-container>
+        <div>
+            <button class="submit" type="submit" class="btn" mat-raised-button color="primary">
+                <ng-container *ngIf="login">
+                    Log In
+                </ng-container>
+                <ng-container *ngIf="!login">
+                    Register
+                </ng-container>
+            </button>
+        </div>
+        <div class="anchor-login">
+            <ng-container *ngIf="login">
+                <a (click)="login = !login">Create a new account</a>
+            </ng-container>
+            <ng-container *ngIf="!login">
+                <a (click)="login = !login">Already a user? Login instead</a>
+            </ng-container>
+        </div>
+
+
+    </form>
+</div>

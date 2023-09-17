@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="product-container">
+        <div class="image-container">
+            <img src="{{product.image}}" alt="image">
+        </div>
+        <div class="info-container">
+            <div class="name-container">
+                <div>
+                    <span class="name">{{product.name}}</span>
+                </div>
+                <div>
+                    <span class="category">{{product.category}}</span>
+                </div>
+                <span class="stock">
+                    <em [style.color]="product.stock < 10? 'red':'#4AE599'">
+                        {{product.stock}} in stock
+                    </em>
+                </span>
+                <hr>
+            <p class="description">{{product.description}}</p>
+
+            </div>
+            <div class="purchase">
+            <div class="product-quantity">
+                <button class="btn btn-quantity" (click)="decreaseQuantity()">-</button>
+                <button class="btn" (click)="purchase()">Purchase {{quantity}} of this item</button>
+                <button class="btn btn-quantity" (click)="increaseQuantity()">+</button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="cart-container">
+        <div class="product-container">
+            <div class="title">
+                <h1>Shopping Cart</h1>
+                <div class="items-prices">
+                    <span class="items">{{products.length}} Items</span>
+                    <span class="price">${{totalPrice}}</span>
+                </div>
+
+            </div>
+            <div class="products-container">
+                <div class="product-card" *ngFor="let product of products">
+                    <div>
+
+                        <div class="img-container">
+                            <img src="{{product.product.image}}" alt="">
+                        </div>
+                    </div>
+                    <div class="name">{{product.product.name}}<span class="category">{{product.product.category}}</span>
+                    </div>
+                    <div class="quantity"><button (click)="decrementQuantity(product)">-</button>
+                        <input type="number" [(ngModel)]="product.quantity" (keyup)="reAssignQuantity(product,$event)">
+                        <button (click)="incrementQuantity(product)">+</button>
+                    </div>
+                  <div class="price">
+                    <span class="unit-price">${{parseFloatPrice(product.product.price) * product.quantity}}</span>
+                    <span class="unit-price smaller">Per item: ${{product.product.price}}</span>
+                </div>
+
+                    <div class="delete-btn"><button (click)="deleteProduct(product)"><i
+                                class="fa-solid fa-xmark"></i></button></div>
+                </div>
+            </div>
+            <div class="checkout">
+                <button (click)="checkout()">Checkout</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="card-container">
+        <div class="image-container">
+            <div class="checkbox-container">
+            <mat-checkbox [color]="color" class="checkbox"(change)="checkProduct(product.id)"  type="checkbox"></mat-checkbox>
+            <div class="checkbox fake">
+            </div>
+        </div>
+            <img src="{{product.image}}">
+        </div>
+        <div class="card-footer">
+            <div>
+                <span class="name">{{product.name}}</span>
+                <span class="price">${{product.price}}</span>
+            </div>
+            <div class="card-btns">
+                <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
+                <button class="edit" (click)="updateProduct(product)">Edit</button>
+            </div>
+        </div>
+</div>

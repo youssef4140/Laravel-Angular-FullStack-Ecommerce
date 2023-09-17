@@ -1,0 +1,106 @@
+<mat-accordion
+*ngFor="let order of orders;index as i">
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Order: {{i}}
+    </mat-panel-title>
+  <mat-panel-description>
+    Total Price: {{order.total}}
+    |
+    Order Status: {{order.status}}
+  </mat-panel-description>
+</mat-expansion-panel-header>
+<mat-accordion
+*ngFor="let product of order.products;index as i">
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Product: {{product.product.id}}
+      |
+      Name: {{product.product.name}}
+    </mat-panel-title>
+  <mat-panel-description>
+    Total Price: {{order.total}}
+    |
+    Order Status: {{order.status}}
+  </mat-panel-description>
+</mat-expansion-panel-header>
+<div class="product-container">
+      <div class="image-container">
+          <img src="{{product.product.image}}" alt="{{product.product.name}}">
+      </div>
+      <div class="description">
+        <span>
+          Product Category: {{product.product.category}} 
+          | 
+          Stock: {{product.product.stock}}
+        </span>
+          <span>{{product.product.description}}</span>
+      </div>
+  </div>
+
+</mat-expansion-panel>
+
+</mat-accordion>
+
+</mat-expansion-panel>
+
+</mat-accordion>
+
+  <!-- <mat-accordion
+  *ngFor="let product of order.products">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Product: {{product.product.id}}
+        |
+        {{product.product.name}} 
+        ::
+      </mat-panel-title>
+    <mat-panel-description>
+    Quantity: {{product.quantity}}
+    |
+    Subtotal: {{product.subtotal}}
+    |
+    Unit Price: {{product.product.price}}
+    </mat-panel-description>
+  </mat-expansion-panel-header> -->
+    <!-- <div class="product-container">
+      <div class="image-container">
+          <img src="{{product.product.image}}" alt="{{product.product.name}}">
+      </div>
+      <div class="description">
+          Product Category: {{product.product.category}} 
+          | 
+          Stock: {{product.product.stock}}
+          <span>{{product.product.description}}</span>
+      </div>
+  </div> -->
+  <!-- </mat-expansion-panel> -->
+<!-- </mat-accordion> -->
+<!-- <mat-accordion
+*ngFor="let order of orders;index as i">
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{order.product.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Unit Price :${{order.product.price}}
+        |
+        Subtotal: ${{order.subtotal}} 
+        |
+        Quantity: {{order.quantity}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="product-container">
+        <div class="image-container">
+            <img src="{{order.product.image}}" alt="{{order.product.name}}">
+        </div>
+        <div class="description">
+            <span>{{order.product.description}}</span>
+        </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion> -->

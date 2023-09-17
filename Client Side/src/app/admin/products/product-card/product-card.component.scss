@@ -1,0 +1,58 @@
+@import 'src/variables.scss';
+
+.card-container {
+    .image-container {
+        position: relative;
+
+        .checkbox-container{
+            margin-left: 88%;
+            position: absolute;
+            .fake{
+            pointer-events: none;
+            position: absolute;
+            top:29%;
+            left:28%;
+            border:2px solid $danger;
+            width:17px;
+            height:17px;
+            }
+            
+        }
+        width:20vw;
+        @media screen and (max-width:1030px) {
+            width:25vw;
+        }
+        @media screen and (max-width:772px) {
+            width:35vw;
+        }
+        @media screen and (max-width:540px) {
+            width:70vw;
+        }
+            
+        img{
+            max-width:100%;
+        }
+        
+    }
+    .card-footer{
+        @include flex(row,center,space-between);
+        div{
+            @include flex(column,flex-start,unset);
+            button{
+                width:40px;
+                background-color: $background-color;
+                border:none;
+                outline: none;
+                cursor: pointer;
+                text-align: left;
+                &.delete{
+                    color:$danger;
+                }
+                &.edit{
+                    color:$primary-color;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,103 @@
+@import 'src/variables';
+
+.container {
+    @include flex(column, unset, center);
+
+    .personal-info {
+        width: 100%;
+        @include flex(row, center, center);
+
+
+        h1 {
+            font-size: 6vw;
+            padding: 1rem 5rem 1rem 1rem;
+            line-height: 5vw;
+
+            span {
+                color: $primary-color;
+            }
+
+            margin-right:30vw;
+
+            @media screen and (max-width:900px) {
+                margin-right: 0vw;
+                padding-right: 1rem;
+                font-size: 4rem;
+                line-height: 3rem;
+
+
+            }
+        }
+
+        .contact-info {
+            padding: 1rem 5rem 1rem 1rem;
+            border-left: 1px solid $border-color;
+
+            h2 {
+                font-size: 5vw;
+                line-height: 4vw;
+
+            }
+
+            @include flex(column, flex-start, center);
+
+            span {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+
+                @media screen and (max-width:900px) {
+                    font-size: 3vw;
+
+                }
+
+            }
+
+            span:not(strong) {
+                color: $border-color;
+            }
+
+
+        }
+
+    }
+
+    hr {
+        width: 100%
+    }
+    .orders {
+        border: 1px solid $border-color;
+
+        .product {
+            border: 2px solid $border-color;
+
+            .product-info {
+                border: 1px solid $border-color;
+
+            }
+        }
+    }
+
+}
+
+mat-expansion-panel {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    color: $primary-color;
+
+    p,
+    mat-panel-title,
+    mat-panel-description {
+        color: $primary-color;
+        span {color: $primary-color;}
+        
+    }
+}
+.mat-expansion-panel-header-description{
+    justify-content: space-between;
+    align-items: center;
+}
+
+::ng-deep mat-expansion-panel-header > .mat-expansion-indicator:after {
+    color: $primary-color;
+  }
+  

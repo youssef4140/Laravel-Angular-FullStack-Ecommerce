@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <ul>
+    <div class="logo"><span>A</span></div>
+    <li class="shop underline"><a routerLink="/shop">Shop</a> </li>
+    <li class="search"><i class="fa-solid fa-magnifying-glass"></i><input [(ngModel)]="searchInput" type="text"
+        id="search" placeholder="Search..." (keyup.enter)="search()"></li>
+  </ul>
+  <ul>
+    <ng-container *ngIf="user && user.name; else showLogin">
+
+      <li class="profile">
+        <button class="profile-btn underline" mat-icon-button [matMenuTriggerFor]="menu" aria-label="profile">
+          {{user.name}}
+          <i style="font-size:16px" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a routerLink="/profile">
+            <button mat-menu-item>
+              <span>Profile</span>
+            </button>
+          </a>
+          <button mat-menu-item (click)="signOut()">
+            <span>Sign Out</span>
+          </button>
+          <ng-container *ngIf="user.is_admin">
+          <a routerLink="/adminProducts">
+            <button mat-menu-item>
+              <span>Admin Dashboard</span>
+            </button>
+          </a>
+          </ng-container>
+        </mat-menu>
+      </li>
+    </ng-container>
+    <ng-template #showLogin>
+      <li class="shop underline" (click)="login()">Log In</li>
+    </ng-template>
+    <ng-container *ngIf="user && user.name; else loginFirst">
+      <li><a routerLink="cart" class="submit"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+    </ng-container>
+    <ng-template #loginFirst>
+      <li class="submit" (click)="loginAlert()"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></li>
+    </ng-template>
+  </ul>
+</nav>
+<div #searchBox class="search-box">
+  <span ><i (click)="closeSearchBox()" class="fa-solid fa-x"></i></span>
+  <div class="search-results">
+    <div class="result" *ngFor="let result of searchResult">
+      <app-product-card [product]="result"></app-product-card>
+    </div>
+  </div>
+</div>

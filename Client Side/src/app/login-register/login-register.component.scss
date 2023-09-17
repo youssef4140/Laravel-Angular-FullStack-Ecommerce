@@ -1,0 +1,85 @@
+@import 'src/variables.scss';
+
+.container {
+.register-form{
+    display: grid;
+grid-template-columns: 1fr 1fr ;
+@media screen and (max-width: 700px){
+grid-template-columns: 1fr;
+
+}
+}
+padding:2rem ;
+background-color: $background-color;
+a{
+    color:$primary-color;
+    cursor: pointer;
+      &:active {
+        color: blue;
+      }
+
+}
+.form-field{
+    margin:0 1rem 0 1rem;
+.custom-form-field{
+    width:60vw;
+    max-width: 227px;
+
+}}
+button.hide-password{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+mat-label{
+    color:$primary-color;
+}
+mat-error{
+    color:$primary-color;
+}
+mat-icon{
+    color:$primary-color;
+}
+
+div.mat-mdc-text-field-wrapper.mdc-text-field {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    input{
+        color:$font-color;
+        transition: all 1s ease-in-out;
+    }
+  }
+
+  .btn{
+    background-color: $background-color;
+    outline: none;
+    border:1px solid $border-color;
+    padding:0.5rem 2rem ;
+    color:$primary-color;
+    font-size: 1em;
+    cursor: pointer;
+    display:block;
+    margin: auto;
+    &:hover{
+    color:$background-color;
+    background-color: $primary-color;
+    }
+
+
+  }
+
+  .anchor-login{
+    @include flex(row,center,center);
+    @media screen and (max-width: 700px){
+      margin-top:2rem;
+      
+      }
+  }
+
+  mat-hint{
+    color:$primary-color;
+  }
+
+
+}
+

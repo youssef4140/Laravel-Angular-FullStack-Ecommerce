@@ -1,0 +1,32 @@
+<div class="header">
+    <a class="Orders" routerLink="/adminOrders" >
+        <i class="fa-solid fa-arrow-left"></i> Go To Orders 
+    </a>
+    <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input [(ngModel)]="searchInput" type="text" id="search" placeholder="Admin Search..." (keyup.enter)="search()"></div>
+
+    <button (click)="addProduct()" class="btn-product add">Add product</button>
+    <button (click)="deleteChecked()" class="btn-product delete">Delete Checked</button>
+
+</div>
+<div #searchBox class="search-box">
+    <span ><i (click)="closeSearchBox()" class="fa-solid fa-x"></i></span>
+    <div class="search-results">
+      <div class="result" *ngFor="let product of searchResult">
+        <app-product-card (update)="updateProduct($event)" (idCheckBox)="changeProductsChecked($event)" (idDelete)="deleteProduct($event)" [product]="product"></app-product-card>
+    </div>
+    </div>
+  </div>
+<div class="container">
+    <div class="products-container">
+        <div *ngFor="let product of products" class="single-product-container">
+            <app-product-card (update)="updateProduct($event)" (idCheckBox)="changeProductsChecked($event)" (idDelete)="deleteProduct($event)" [product]="product"></app-product-card>
+        </div>
+
+    </div>
+
+    <div class="pagination-btns">
+        <div class="btn btnleft" (click)="lastPage()" ><i class="fa-solid fa-chevron-left"></i></div>
+        <span class="page-number">{{page}}</span>
+        <div class="btn btnright" (click)="nextPage()"><i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<mat-accordion
+*ngFor="let product of products;index as i">
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{product.product.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Unit Price :${{product.product.price}}
+        |
+        Subtotal: ${{product.subtotal}} 
+        |
+        Quantity: {{product.quantity}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="product-container">
+        <div class="image-container">
+            <img src="{{product.product.image}}" alt="{{product.product.name}}">
+        </div>
+        <div class="description">
+            <span>{{product.product.description}}</span>
+        </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

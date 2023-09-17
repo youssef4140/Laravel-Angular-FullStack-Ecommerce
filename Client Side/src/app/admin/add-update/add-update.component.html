@@ -1,0 +1,64 @@
+<div class="container">
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="register-form">
+
+        <mat-form-field class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name"  required>
+            <mat-hint>Must be unique</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput formControlName="price"  required>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Stock</mat-label>
+            <input type="number" matInput formControlName="stock"  required>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Image</mat-label>
+            <input matInput formControlName="image" required>
+            <mat-hint>https://picsum.photos/600/400</mat-hint>
+
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category"  required>
+                <mat-option value="Abstract Art">Abstract Art</mat-option>
+                <mat-option value="Photography">Photography</mat-option>
+                <mat-option value="Digital Art">Digital Art</mat-option>
+              </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status"  required>
+                <mat-option value="On Sale">On Sale</mat-option>
+                <mat-option value="Not On Sale">Not On Sale</mat-option>
+              </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form-field fr2">
+            <mat-label>Description</mat-label>
+            <textarea class="spanDouble" matInput formControlName="description"  required></textarea>
+        </mat-form-field>
+
+        <div>
+            <button class="btn cancel" type="submit" mat-raised-button color="primary">
+                    Cancel
+            </button>
+        </div>
+    <div>
+        <button class="btn submit" type="submit" mat-raised-button color="primary">
+                Submit
+        </button>
+    </div>
+
+
+
+
+</form>
+</div>

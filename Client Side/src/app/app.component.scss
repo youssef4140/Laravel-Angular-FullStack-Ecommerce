@@ -1,0 +1,7 @@
+@import 'src/variables.scss';
+.container {
+    min-height:100vh;
+    width:auto;
+    background-color: $background-color;
+    overflow: hidden;
+}
