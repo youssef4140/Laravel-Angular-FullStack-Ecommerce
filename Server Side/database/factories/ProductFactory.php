@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductFactory extends Factory
 {
-    private static $imageCounter = 0;
     /**
      * Define the model's default state.
      *
@@ -20,9 +19,8 @@ class ProductFactory extends Factory
     {
         $categories = ['Digital Art', 'Photography', 'Abstract Art'];
 
-        $status = ['On Sale', 'Best Seller', 'Free Delivery'];
+        $status = ['On Sale', 'Not On Sale'];
 
-        self::$imageCounter++;
 
         return [
             'name' => ucfirst($this->faker->unique()->word(8)),
